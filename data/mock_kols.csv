@@ -1,0 +1,31 @@
+creator_id,creator_name,platform,creator_category,followers,engagement_rate,audience_match_score,estimated_reach,estimated_fee_usd,content_quality_score,assumed_ctr,assumed_click_to_purchase_cvr,data_type,assumption_version
+SIM001,SIM Whisker Window,Instagram,Cat creators,18000,0.025,92,5400,280,68,0.014,0.025,simulated,phase1-v1
+SIM002,SIM Paw Porch,Instagram,Pet lifestyle,32000,0.06,80,12480,420,75,0.012,0.02,simulated,phase1-v1
+SIM003,SIM Bowl Review Lab,Instagram,Pet product reviews,45000,0.025,82,21600,700,82,0.022,0.035,simulated,phase1-v1
+SIM004,SIM Connected Nest,Instagram,Smart home,65000,0.06,64,37050,1100,89,0.016,0.018,simulated,phase1-v1
+SIM005,SIM Catnap Journal,Instagram,Cat creators,24000,0.025,89,15840,350,96,0.014,0.025,simulated,phase1-v1
+SIM006,SIM Tail Trail,Instagram,Pet lifestyle,82000,0.06,77,61500,950,74,0.012,0.02,simulated,phase1-v1
+SIM007,SIM Feeder Fieldnotes,Instagram,Pet product reviews,56000,0.025,88,16800,900,81,0.022,0.035,simulated,phase1-v1
+SIM008,SIM Smart Room Notes,Instagram,Smart home,110000,0.06,61,42900,1500,88,0.016,0.018,simulated,phase1-v1
+SIM009,SIM Two Cats Daily,Instagram,Cat creators,39000,0.025,86,18720,500,95,0.014,0.025,simulated,phase1-v1
+SIM010,SIM Pawprint Living,Instagram,Pet lifestyle,145000,0.06,83,82650,1900,73,0.012,0.02,simulated,phase1-v1
+SIM011,SIM Pet Gear Bench,Instagram,Pet product reviews,28000,0.025,85,18480,650,80,0.022,0.035,simulated,phase1-v1
+SIM012,SIM Home Circuit,Instagram,Smart home,175000,0.06,58,131250,2400,87,0.016,0.018,simulated,phase1-v1
+SIM013,SIM Tabby Afternoon,Instagram,Cat creators,52000,0.025,92,15600,750,94,0.014,0.025,simulated,phase1-v1
+SIM014,SIM Cozy Paws Studio,Instagram,Pet lifestyle,96000,0.06,80,37440,1200,72,0.012,0.02,simulated,phase1-v1
+SIM015,SIM Pet Test Table,Instagram,Pet product reviews,210000,0.025,82,100800,3200,79,0.022,0.035,simulated,phase1-v1
+SIM016,SIM Whisker Routine,TikTok,Smart home,22000,0.06,64,12540,300,86,0.016,0.018,simulated,phase1-v1
+SIM017,SIM Paw Daybook,TikTok,Cat creators,48000,0.025,89,31680,580,93,0.014,0.025,simulated,phase1-v1
+SIM018,SIM Pet Tech Trials,TikTok,Pet lifestyle,72000,0.06,77,54000,1150,71,0.012,0.02,simulated,phase1-v1
+SIM019,SIM Nest Automation,TikTok,Pet product reviews,125000,0.025,88,37500,1800,78,0.022,0.035,simulated,phase1-v1
+SIM020,SIM Mittens Moments,TikTok,Smart home,35000,0.06,61,13650,450,85,0.016,0.018,simulated,phase1-v1
+SIM021,SIM Companion Corner,TikTok,Cat creators,88000,0.025,86,42240,1000,92,0.014,0.025,simulated,phase1-v1
+SIM022,SIM Bowl And Button,TikTok,Pet lifestyle,58000,0.06,83,33060,850,70,0.012,0.02,simulated,phase1-v1
+SIM023,SIM Everyday Smart Home,TikTok,Pet product reviews,165000,0.025,85,108900,2200,77,0.022,0.035,simulated,phase1-v1
+SIM024,SIM Multi Cat Diary,TikTok,Smart home,42000,0.06,58,31500,600,84,0.016,0.018,simulated,phase1-v1
+SIM025,SIM Paws At Home,TikTok,Cat creators,115000,0.025,92,34500,1450,91,0.014,0.025,simulated,phase1-v1
+SIM026,SIM Pet Gadget Notes,TikTok,Pet lifestyle,64000,0.06,80,24960,1050,69,0.012,0.02,simulated,phase1-v1
+SIM027,SIM Room And Routine,TikTok,Pet product reviews,250000,0.025,82,120000,4800,76,0.022,0.035,simulated,phase1-v1
+SIM028,SIM Window Cats Club,TikTok,Smart home,30000,0.06,64,17100,400,83,0.016,0.018,simulated,phase1-v1
+SIM029,SIM Tail And Table,TikTok,Cat creators,135000,0.025,89,89100,1700,90,0.014,0.025,simulated,phase1-v1
+SIM030,SIM Pet Setup Studio,TikTok,Pet lifestyle,190000,0.06,77,142500,2800,68,0.012,0.02,simulated,phase1-v1
