@@ -1,0 +1,13 @@
+{
+  "version": "showcase-planning-v1",
+  "model_presets": {"audience_match_score": 100, "content_quality_score": 50},
+  "notice": "All campaign costs and performance projections are illustrative planning assumptions, not actual creator quotes or historical campaign results.",
+  "creators": {
+    "KOL-014": {"fee": 1100, "reach": 46000, "er": 0.035, "ctr": 0.012, "cvr": 0.022, "format": "Instagram 短视频演示"},
+    "KOL-006": {"fee": 950, "reach": 38000, "er": 0.05, "ctr": 0.014, "cvr": 0.026, "format": "Instagram 家庭场景短视频"},
+    "KOL-025": {"fee": 600, "reach": 22000, "er": 0.075, "ctr": 0.016, "cvr": 0.024, "format": "TikTok 短视频演示"},
+    "KOL-022": {"fee": 800, "reach": 31000, "er": 0.06, "ctr": 0.011, "cvr": 0.02, "format": "TikTok 生活场景短视频"},
+    "KOL-041": {"fee": 1700, "reach": 66000, "er": 0.028, "ctr": 0.018, "cvr": 0.032, "format": "YouTube 统一演示合作口径，不区分长视频与 Shorts"},
+    "KOL-044": {"fee": 2100, "reach": 82000, "er": 0.04, "ctr": 0.013, "cvr": 0.028, "format": "YouTube 统一演示合作口径，不区分长视频与 Shorts"}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "brand": "PETKIT",
+  "product": "YumShare Dual-hopper 2",
+  "category": "智能宠物喂食器",
+  "description": "双仓智能干粮喂食器，面向日常宠物喂养场景。",
+  "market": "United States",
+  "selling_points": "双仓储粮、定时定量、智能喂养",
+  "fit_keyword_groups": [
+    [
+      "喂食",
+      "喂养",
+      "猫粮"
+    ],
+    [
+      "智能",
+      "自动",
+      "科技"
+    ],
+    [
+      "测评",
+      "演示",
+      "开箱"
+    ],
+    [
+      "多猫",
+      "双仓",
+      "份量"
+    ]
+  ],
+  "creator_registry_directory": "data/creator_registry"
+}

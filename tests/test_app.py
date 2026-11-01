@@ -9,7 +9,7 @@ class AppSmokeTests(unittest.TestCase):
     def test_research_without_any_eligible_model_inputs(self):
         from research_data import load_campaign_assumptions
         disabled = load_campaign_assumptions().assign(model_enabled=False)
-        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py"), default_timeout=30).run()
+        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "legacy_app.py"), default_timeout=30).run()
         with patch('research_data.load_campaign_assumptions', return_value=disabled):
             app.radio(key='dataset').set_value('Real Creator Research Dataset').run()
         self.assertEqual(len(app.exception), 0)
@@ -18,7 +18,7 @@ class AppSmokeTests(unittest.TestCase):
         self.assertTrue(app.button(key='save_baseline').disabled)
 
     def test_research_switch_planning_and_separate_baselines(self):
-        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py"), default_timeout=30).run()
+        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "legacy_app.py"), default_timeout=30).run()
         app.button(key="save_baseline").click().run()
         demo_baseline = app.session_state['baseline']
         app.radio(key='dataset').set_value('Real Creator Research Dataset').run()
@@ -44,7 +44,7 @@ class AppSmokeTests(unittest.TestCase):
         self.assertEqual(next(metric.value for metric in app.metric if metric.label == '模拟创作者'), '30')
 
     def test_budget_baseline_and_download_flow(self):
-        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py"), default_timeout=30).run()
+        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "legacy_app.py"), default_timeout=30).run()
         self.assertEqual(len(app.exception), 0)
         app.button(key="save_baseline").click().run()
         saved = app.session_state["baseline"]
@@ -66,7 +66,7 @@ class AppSmokeTests(unittest.TestCase):
             app.session_state["baseline"]
 
     def test_default_objective_and_empty_filter(self):
-        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py"), default_timeout=30).run()
+        app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "legacy_app.py"), default_timeout=30).run()
         self.assertEqual(len(app.exception), 0)
         self.assertEqual(next(metric.value for metric in app.metric if metric.label == "模拟创作者"), "30")
         app.selectbox[0].select("Conversion").run()

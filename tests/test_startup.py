@@ -48,7 +48,7 @@ print("Fresh imports, local paths and CSV version contract: OK")
 from pathlib import Path
 from streamlit.testing.v1 import AppTest
 
-app = AppTest.from_file(str(Path.cwd() / "app.py"), default_timeout=30).run()
+app = AppTest.from_file(str(Path.cwd() / "legacy_app.py"), default_timeout=30).run()
 assert not app.exception, [item.message for item in app.exception]
 assert next(item.value for item in app.metric if item.label == "模拟创作者") == "30"
 app.radio(key="dataset").set_value("Real Creator Research Dataset").run()

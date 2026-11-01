@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class WorkspaceLayoutTests(unittest.TestCase):
     def open_app(self):
-        app = AppTest.from_file(str(ROOT / 'app.py'), default_timeout=30).run()
+        app = AppTest.from_file(str(ROOT / 'legacy_app.py'), default_timeout=30).run()
         self.assertFalse(app.exception)
         return app
 

@@ -69,12 +69,12 @@ class ChineseDisplayTests(unittest.TestCase):
             self.assertRegex(text_zh(source), r'[\u4e00-\u9fff]')
         self.assertIn('followers', text_zh('Missing required fields: followers'))
         with patch('kol_data.load_kol_data', side_effect=ValueError('Missing required fields: followers')):
-            app = AppTest.from_file(str(ROOT / 'app.py'), default_timeout=30).run()
+            app = AppTest.from_file(str(ROOT / 'legacy_app.py'), default_timeout=30).run()
         self.assertEqual(len(app.exception), 0)
         self.assertEqual(app.error[0].value, '缺少必要字段：followers')
 
     def test_page_labels_and_dataset_switch_use_chinese_display(self):
-        app = AppTest.from_file(str(ROOT / 'app.py'), default_timeout=30).run()
+        app = AppTest.from_file(str(ROOT / 'legacy_app.py'), default_timeout=30).run()
         self.assertEqual(len(app.exception), 0)
         self.assertEqual(app.title[0].value, 'AI KOL Campaign Decision Assistant')
         self.assertTrue(any(item.value == '海外 KOL 营销决策工作台' for item in app.caption))

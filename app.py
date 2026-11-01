@@ -13,6 +13,12 @@ from research_data import (PARAMETER_MAP, load_campaign_assumptions, load_real_k
 
 st.set_option("client.toolbarMode", "minimal")
 st.set_page_config(page_title="AI KOL Campaign Decision Assistant", page_icon="📊", layout="wide")
+if st.query_params.get('workspace') != 'legacy':
+    from sprint_ui import render_sprint
+    render_sprint()
+    st.stop()
+
+st.warning('历史回归演示：此页面的历史模拟池不用于当前正式推荐。返回主地址（移除 workspace=legacy）进入52条真实账号工作台。')
 apply_workspace_style()
 st.title("AI KOL Campaign Decision Assistant")
 st.caption("海外 KOL 营销决策工作台")

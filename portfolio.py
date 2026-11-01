@@ -14,6 +14,7 @@ DISCLAIMER = (
     "Reach is cumulative and NOT deduplicated. Conversions are mathematical expectations, "
     "not actual orders or ROI. One short video per creator. No AI API. "
     "Costs include creator fee plus per-creator sample and shipping assumptions; exclude tax, internal labor and amplification."
+    " Registry identities are third-party-reported. Sandbox selections of unapproved records are research exercises, not formal recommendations."
 )
 OUTCOME_COLUMNS = {"Brand Awareness": "target_reach", "Engagement": "projected_engagements", "Conversion": "projected_conversions"}
 METRIC_KEYS = ("budget_usd", "spent_usd", "remaining_usd", "creator_count", "raw_reach", "target_reach", "engagements", "clicks", "conversions", "cpm_usd", "cpe_usd", "cpc_usd", "cpa_usd")

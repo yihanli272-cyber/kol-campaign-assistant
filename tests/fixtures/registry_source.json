@@ -1,0 +1,5 @@
+[
+  {"creator_id":"TEST-IG","platform":"Instagram","handle":"fixture_ig","creator_name":"","profile_url":"https://www.instagram.com/fixture_ig/","platform_account_id":"12345678","reported_followers":"100","reported_median_views":"12.5","reported_mean_views":"15.75","reported_mean_engagement_rate":"","reported_median_engagement_rate":"","_id_cell_type":"s"},
+  {"creator_id":"TEST-TT","platform":"TikTok","handle":"fixture_tt","creator_name":"Synthetic Creator","profile_url":"https://www.tiktok.com/@fixture_tt","platform_account_id":"9000000000000000001","reported_followers":"200","reported_median_views":"0","reported_mean_views":"25.5","reported_mean_engagement_rate":"0.05","reported_median_engagement_rate":"0.04","_id_cell_type":"n"},
+  {"creator_id":"TEST-YT","platform":"YouTube","handle":"fixture_yt","creator_name":"Synthetic Creator","profile_url":"https://www.youtube.com/@fixture_yt","platform_account_id":"UC_SYNTHETIC_FIXTURE","reported_followers":"300","reported_median_views":"30.25","reported_mean_views":"40.5","reported_mean_engagement_rate":"0.02","reported_median_engagement_rate":"0.01","_id_cell_type":"s"}
+]

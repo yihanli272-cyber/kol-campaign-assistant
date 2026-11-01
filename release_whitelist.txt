@@ -1,0 +1,62 @@
+# Exact public-release file allowlist. No staging/publishing occurs here.
+.gitattributes
+.gitignore
+.streamlit/config.toml
+README.md
+requirements.txt
+release_whitelist.txt
+
+# Application, compatibility entry, and guarded local administration modules
+app.py
+kol_data.py
+portfolio.py
+research_data.py
+ui_layout.py
+ui_zh.py
+campaign_upgrade.py
+campaign_upgrade_ui.py
+creator_registry.py
+guided_trial_ui.py
+legacy_app.py
+showcase_ui.py
+sprint_decision.py
+sprint_research.py
+sprint_ui.py
+deployment_policy.py
+release_audit.py
+build_sprint_artifacts.py
+
+# Versioned public configuration (no secrets)
+campaign_config.json
+demo_simulation.json
+deployment_config.json
+
+# Required public application data and schemas
+data/mock_campaign_assumptions.csv
+data/mock_kols.csv
+data/real_kols.csv
+data/creator_registry/README.md
+data/creator_registry/accounts.csv
+data/creator_registry/reviews.csv
+data/creator_registry/content_evidence.csv
+data/creator_registry/campaign_assumptions.csv
+data/creator_registry/hicreator_supplement.csv
+
+# Original tests, release tests, and synthetic source fixture
+tests/test_app.py
+tests/test_kol_data.py
+tests/test_portfolio.py
+tests/test_research_data.py
+tests/test_startup.py
+tests/test_ui_layout.py
+tests/test_ui_zh.py
+tests/test_campaign_upgrade.py
+tests/test_creator_registry.py
+tests/test_discovery.py
+tests/test_guided_trial.py
+tests/test_layout_readability.py
+tests/test_showcase.py
+tests/test_sprint.py
+tests/test_public_release.py
+tests/fixture_workbook.py
+tests/fixtures/registry_source.json

@@ -265,6 +265,8 @@ def display_frame(data):
 def show_table(data, **kwargs):
     config = {field: column_label(field) for field in data.columns}
     config.update(kwargs.pop("column_config", {}))
+    kwargs.setdefault('row_height', 88)
+    kwargs.setdefault('height', 'auto')
     return st.dataframe(display_frame(data), column_config=config, **kwargs)
 
 

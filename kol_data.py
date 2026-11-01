@@ -35,8 +35,13 @@ def validate_kol_data(data: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("KOL data is empty; at least one creator is required.")
     result = data.copy()
     hybrid = result["data_type"].eq("hybrid_public_identity_simulated_model")
-    if not (hybrid | result["data_type"].eq("simulated")).all():
+    registry = result["data_type"].eq("third_party_registry_simulated_model")
+    if not (hybrid | registry | result["data_type"].eq("simulated")).all():
         raise ValueError("data_type must be simulated or hybrid_public_identity_simulated_model.")
+    if registry.any():
+        for field, expected in {"identity_data_type": "third_party_reported", "model_data_type": "simulated"}.items():
+            if field not in result or not result.loc[registry, field].eq(expected).all():
+                raise ValueError(f"Registry records require {field}={expected}.")
     if hybrid.any():
         for field, expected in {"identity_data_type": "public_profile", "model_data_type": "simulated",
                                 "numeric_score_basis": "simulated_preset"}.items():
@@ -45,7 +50,7 @@ def validate_kol_data(data: pd.DataFrame) -> pd.DataFrame:
     for field, (lower, upper) in RANGES.items():
         values = pd.to_numeric(result[field], errors="coerce")
         # Public follower counts may be unknown. They are not used by score/forecast math.
-        optional = hybrid & result[field].isna() if field == "followers" else pd.Series(False, index=result.index)
+        optional = (hybrid | registry) & result[field].isna() if field == "followers" else pd.Series(False, index=result.index)
         checked = values.loc[~optional]
         if checked.isna().any() or not checked.map(math.isfinite).all() or not checked.between(lower, upper).all():
             raise ValueError(f"{field} must contain finite numbers between {lower} and {upper}.")
@@ -58,10 +63,12 @@ def validate_kol_data(data: pd.DataFrame) -> pd.DataFrame:
             raise ValueError(f"{field} must not contain missing or blank values.")
     if result["creator_id"].duplicated().any():
         raise ValueError("creator_id must be unique.")
-    if not result.loc[~hybrid, "assumption_version"].eq(ASSUMPTION_VERSION).all():
+    if not result.loc[~hybrid & ~registry, "assumption_version"].eq(ASSUMPTION_VERSION).all():
         raise ValueError(f"Simulated assumption_version must be {ASSUMPTION_VERSION}.")
     if not result.loc[hybrid, "assumption_version"].eq(RESEARCH_ASSUMPTION_VERSION).all():
         raise ValueError(f"Hybrid assumption_version must be {RESEARCH_ASSUMPTION_VERSION}.")
+    if not result.loc[registry, "assumption_version"].eq('registry-sprint-v1').all():
+        raise ValueError('Registry assumption_version must be registry-sprint-v1.')
     return result
 
 
@@ -101,6 +108,8 @@ def score_kols(data: pd.DataFrame, objective: str = "Brand Awareness") -> pd.Dat
 
 def recommendation_reason(row: pd.Series) -> str:
     """Rule explanation uses only the row's simulated values."""
+    if row['data_type'] == 'third_party_registry_simulated_model':
+        return 'HiCreator 第三方账号身份；数值为独立模拟假设。评分排序不等于正式推荐，人工资格在研究工作台单独核验。'
     if row["data_type"] == "hybrid_public_identity_simulated_model":
         return (f"Public research: {row['handle']} on {row['platform']}; verification remains {row['verification_status']}. "
                 f"Research interpretation: {row['fit_rationale']} "
